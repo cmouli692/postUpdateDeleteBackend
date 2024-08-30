@@ -7,7 +7,7 @@ const sqlite3 = require("sqlite3").verbose()
 const app = express()
 
 const corsOptions = {
-    origin : "create-post-update-delete-frontend-bjkk5iwne.vercel.apps",
+    origin : "http://create-post-update-delete-frontend-bjkk5iwne.vercel.apps",
     methods:"GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true
 }
