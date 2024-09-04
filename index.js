@@ -7,7 +7,10 @@ const sqlite3 = require("sqlite3").verbose()
 
 const app = express()
 
-const allowedOrigins = ["https://66d80f14a7edd44f1a70d767--dazzling-lolly-e9fe09.netlify.app/","http://localhost:3000/"]
+const allowedOrigins = [
+    "https://dazzling-lolly-e9fe09.netlify.app",
+    "http://localhost:3000/"
+]
 
 
 
@@ -32,6 +35,7 @@ app.use(cors(corsOptions))
 app.use(express.json())
 app.use((req,res,next) => {
     console.log(`${req.method} ${req.url}`)
+    next()
 })
 
 // const PORT  = process.env.PORT || 3001
