@@ -13,7 +13,7 @@ const allowedOrigins = ["https://66d80f14a7edd44f1a70d767--dazzling-lolly-e9fe09
 
 
 const corsOptions = {
-    origin : allowedOrigins,
+
 
     origin : function(origin,callback) {
         if(!origin )return callback(null,true);
