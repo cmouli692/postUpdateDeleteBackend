@@ -7,7 +7,7 @@ const sqlite3 = require("sqlite3").verbose()
 
 const app = express()
 
-const allowedOrigins = "https://66d80f14a7edd44f1a70d767--dazzling-lolly-e9fe09.netlify.app/"
+const allowedOrigins = ["https://66d80f14a7edd44f1a70d767--dazzling-lolly-e9fe09.netlify.app/","http://localhost:3000/"]
 
 
 
@@ -15,14 +15,14 @@ const allowedOrigins = "https://66d80f14a7edd44f1a70d767--dazzling-lolly-e9fe09.
 const corsOptions = {
     origin : allowedOrigins,
 
-    // origin : function(origin,callback) {
-    //     if(!origin )return callback(null,true);
-    //     if(allowedOrigins.includes(origin)){
-    //         callback(null,true)
-    //     }else{
-    //         callback(new Error("Not allowed by CORS"));
-    //     }
-    // },
+    origin : function(origin,callback) {
+        if(!origin )return callback(null,true);
+        if(allowedOrigins.includes(origin)){
+            callback(null,true)
+        }else{
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
     methods:"GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true
 }
