@@ -8,7 +8,7 @@ const app = express()
 
 const allowedOrigins = [
     "http://localhost:3000",
-    "https://create-post-update-delete-frontend.vercel.app/"
+    "https://66d80f14a7edd44f1a70d767--dazzling-lolly-e9fe09.netlify.app/"
 ]
 
 
@@ -30,7 +30,7 @@ const corsOptions = {
 app.use(cors(corsOptions))
 app.use(express.json())
 
-const PORT  = 3001
+const PORT  = process.env.PORT || 3001
 
 // creating a data  
 
