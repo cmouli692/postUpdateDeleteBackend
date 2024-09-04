@@ -15,21 +15,25 @@ const allowedOrigins = [
 
 
 const corsOptions = {
+    origin : allowedOrigins,
 
-    origin : function(origin,callback) {
-        if(!origin )return callback(null,true);
-        if(allowedOrigins.includes(origin)){
-            callback(null,true)
-        }else{
-            callback(new Error("Not allowed by CORS"));
-        }
-    },
+    // origin : function(origin,callback) {
+    //     if(!origin )return callback(null,true);
+    //     if(allowedOrigins.includes(origin)){
+    //         callback(null,true)
+    //     }else{
+    //         callback(new Error("Not allowed by CORS"));
+    //     }
+    // },
     methods:"GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true
 }
 
 app.use(cors(corsOptions))
 app.use(express.json())
+app.use((req,res,next) => {
+    console.log(`${req.method} ${req.url}`)
+})
 
 const PORT  = process.env.PORT || 3001
 
