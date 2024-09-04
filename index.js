@@ -33,7 +33,8 @@ app.use((req,res,next) => {
     console.log(`${req.method} ${req.url}`)
 })
 
-const PORT  = process.env.PORT || 3001
+// const PORT  = process.env.PORT || 3001
+const PORT  = 3001
 
 // creating a data  
 
