@@ -8,7 +8,7 @@ const sqlite3 = require("sqlite3").verbose()
 const app = express()
 
 const allowedOrigins = [
-    "https://dazzling-lolly-e9fe09.netlify.app",
+    "https://66d964da8e2116dabdd43005--dazzling-lolly-e9fe09.netlify.app/",
     "http://localhost:3000/"
 ]
 
